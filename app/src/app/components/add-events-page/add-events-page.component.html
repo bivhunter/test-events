@@ -1,0 +1,40 @@
+<div class="header-container">
+    <a mat-button routerLink="/home">
+        <mat-icon>arrow_back</mat-icon>
+    </a>
+    <h1 class="header">Add event</h1>
+</div>
+
+<mat-grid-list cols="2" [rowHeight]="'300px'">
+    <mat-grid-tile>
+
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+                <mat-label>Event Name</mat-label>
+                <input matInput placeholder="Event Name" formControlName="name" required>
+                <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Event Address</mat-label>
+                <input matInput placeholder="Address" formControlName="address" required>
+                <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Event Date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <br>
+            <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">
+                Add event
+            </button>
+        </form>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <app-event [event]="event"></app-event>
+    </mat-grid-tile>
+</mat-grid-list>

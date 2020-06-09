@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.add-button {
+    width: 232px;
+    height: 232px;
+    margin: 5px;
+    background-color: silver;
+}
+
+.card {
+    margin: 5px;
+}
+
+.header {
+    padding-left: 50px;
+}

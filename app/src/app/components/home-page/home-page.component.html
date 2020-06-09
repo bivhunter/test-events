@@ -1,0 +1,10 @@
+<h1 class="header">Home</h1>
+<div class="container">
+    <app-event *ngFor="let event of events$ | async" [event]="event" class="card">
+    </app-event>
+
+    <button mat-raised-button class="add-button" routerLink="/adding">
+        <h3>+</h3>
+        <h3>Add more</h3>
+    </button>
+</div>

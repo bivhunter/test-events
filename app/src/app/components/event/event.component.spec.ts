@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EventComponent } from './event.component';
+import { StoreModule, Store } from '@ngrx/store';
+import { reducers } from 'src/app/modules/feature/reducers';
 
 describe('EventComponent', () => {
   let component: EventComponent;
@@ -8,9 +10,13 @@ describe('EventComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EventComponent ]
+      declarations: [EventComponent],
+      imports: [
+        StoreModule.forRoot(reducers, {}),
+      ],
+      providers: [Store]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

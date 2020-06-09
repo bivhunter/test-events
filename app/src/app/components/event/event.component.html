@@ -6,10 +6,10 @@
         </div>
         <mat-grid-list class="container" cols="2" rowHeight="4:1">
             <mat-grid-tile colspan="2">
-                <h3>{{event.name}}</h3>
+                <h3>{{event?.name}}</h3>
             </mat-grid-tile>
-            <mat-grid-tile colSpan="1">{{event.address}}</mat-grid-tile>
-            <mat-grid-tile colspan="1">{{event.date | date:'dd MMM'}}</mat-grid-tile>
+            <mat-grid-tile colSpan="1">{{event?.address}}</mat-grid-tile>
+            <mat-grid-tile colspan="1">{{event?.date | date:'dd MMM'}}</mat-grid-tile>
 
         </mat-grid-list>
     </mat-card-content>
